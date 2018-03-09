@@ -5,42 +5,23 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * Created by jean on 29/07/16.
+ * @author Jean Carlos (Github: @jeancsanchez)
+ * @date 29/07/16.
+ * Jesus loves you.
  */
-
 public class RestResponse {
+
+    @SerializedName("messages")
     private List<String> messages;
+
+    @SerializedName("result")
     private List<Country> result;
 
-    public List<Country> getResult(){
+    public List<Country> getResult() {
         return result;
     }
 
-    public List<String> getMessages(){
+    public List<String> getMessages() {
         return messages;
-    }
-
-    public class Country {
-        @SerializedName("name")
-        private String name;
-
-        @SerializedName("alpha2_code")
-        private String alphaCode2;
-
-        @SerializedName("alpha3_code")
-        private String alphaCode3;
-
-
-        public String getName() {
-            return name;
-        }
-
-        public String getAlphaCode2() {
-            return alphaCode2;
-        }
-
-        public String getAlphaCode3() {
-            return alphaCode3;
-        }
     }
 }

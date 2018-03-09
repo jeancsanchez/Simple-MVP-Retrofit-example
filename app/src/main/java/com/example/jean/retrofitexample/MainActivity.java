@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.jean.retrofitexample.Model.RestResponse;
+import com.example.jean.retrofitexample.Model.Country;
 import com.example.jean.retrofitexample.Presenter.CountryPresenter;
 
 import java.util.List;
@@ -23,8 +23,10 @@ public class MainActivity extends AppCompatActivity implements CountryPresenter.
     }
 
     @Override
-    public void countriesReady(List<RestResponse.Country> countries) {
-        for(RestResponse.Country country : countries){
+    public void countriesReady(List<Country> countries) {
+
+        // See your LogCat :)
+        for(Country country : countries){
             Log.i("RETROFIT", country.getName() + "\n"
                     + " - Alpha2:  " + country.getAlphaCode2() +" \n"
                     + " - Alpha3: " + country.getAlphaCode3());
