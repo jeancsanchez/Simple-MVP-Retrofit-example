@@ -1,4 +1,4 @@
-package com.example.jean.retrofitexample.Service;
+package com.example.jean.retrofitexample.service;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,4 +1,4 @@
-package com.example.jean.retrofitexample.Model;
+package com.example.jean.retrofitexample.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -9,7 +9,6 @@ import com.google.gson.annotations.SerializedName;
  * @date 09/03/18.
  * Jesus loves you.
  */
-
 public class Data {
 
     @SerializedName("RestResponse")

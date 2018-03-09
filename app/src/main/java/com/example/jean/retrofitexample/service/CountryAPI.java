@@ -1,7 +1,6 @@
-package com.example.jean.retrofitexample.Service;
+package com.example.jean.retrofitexample.service;
 
-import com.example.jean.retrofitexample.Model.Data;
-import com.example.jean.retrofitexample.Model.RestResponse;
+import com.example.jean.retrofitexample.model.Data;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

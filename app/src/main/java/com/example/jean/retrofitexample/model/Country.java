@@ -1,11 +1,14 @@
-package com.example.jean.retrofitexample.Model;
+package com.example.jean.retrofitexample.model;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by jean on 09/03/18.
+ * This class represents the country view interface.
+ *
+ * @author Jean Carlos (Github: @jeancsanchez)
+ * @date 09/03/18.
+ * Jesus loves you.
  */
-
 public class Country {
 
     @SerializedName("name")
@@ -16,7 +19,6 @@ public class Country {
 
     @SerializedName("alpha3_code")
     private String alphaCode3;
-
 
     public String getName() {
         return name;

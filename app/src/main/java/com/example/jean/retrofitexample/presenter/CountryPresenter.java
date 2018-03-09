@@ -1,10 +1,9 @@
-package com.example.jean.retrofitexample.Presenter;
+package com.example.jean.retrofitexample.presenter;
 
-import android.content.Context;
-
-import com.example.jean.retrofitexample.Model.Country;
-import com.example.jean.retrofitexample.Model.Data;
-import com.example.jean.retrofitexample.Service.CountryService;
+import com.example.jean.retrofitexample.model.Country;
+import com.example.jean.retrofitexample.model.Data;
+import com.example.jean.retrofitexample.service.CountryService;
+import com.example.jean.retrofitexample.view.CountryView;
 
 import java.util.List;
 
@@ -12,23 +11,25 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 /**
- * Created by jean on 29/07/16.
+ * This class represents the country view interface.
+ *
+ * @author Jean Carlos (Github: @jeancsanchez)
+ * @date 29/07/16.
+ * Jesus loves you.
  */
-
 public class CountryPresenter {
-    private final Context context;
-    private final CountryPresenterListener mListener;
-    private final CountryService countryService;
 
-    public interface CountryPresenterListener {
-        void countriesReady(List<Country> countries);
-    }
+    private CountryView countryView;
+    private CountryService countryService;
 
-    public CountryPresenter(CountryPresenterListener listener, Context context) {
-        this.mListener = listener;
-        this.context = context;
-        this.countryService = new CountryService();
+    public CountryPresenter(CountryView view) {
+        this.countryView = view;
+
+        if (this.countryService == null) {
+            this.countryService = new CountryService();
+        }
     }
 
     public void getCountries() {
@@ -42,7 +43,7 @@ public class CountryPresenter {
 
                         if (data != null && data.getRestResponse() != null) {
                             List<Country> result = data.getRestResponse().getResult();
-                            mListener.countriesReady(result);
+                            countryView.countriesReady(result);
                         }
                     }
 
